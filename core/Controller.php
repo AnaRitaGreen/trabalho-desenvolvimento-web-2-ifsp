@@ -1,5 +1,5 @@
 <?php
-  class Controller{
+  class Controller {
     public function __construct(){
       global $config;
     }
@@ -9,9 +9,9 @@
       include "views/$viewName.php";
     }
 
-    public function loadTemplate($viewName, $viewData = array()){
+    public function loadTemplate($templateName, $viewName, $viewData = array()){
       extract($viewData);
-      include "template/template.php";
+      include "template/$templateName.php";
     }
     
   }
