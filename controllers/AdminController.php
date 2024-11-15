@@ -11,10 +11,6 @@ class AdminController extends Controller {
   public function index() {
     $this->loadTemplate('admin_template', 'admin', $this->dados);
   }
-
-  public function cidades() {
-    $this->loadTemplate('admin_template', 'cidades', $this->dados);
-  }
 }
 
 ?>

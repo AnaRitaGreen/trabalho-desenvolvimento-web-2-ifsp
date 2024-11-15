@@ -23,37 +23,37 @@
       <li class="nav-item">
         <a href="#" class="nav-link active" aria-current="page">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-          Cidade
+          Cidades
         </a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-          Ponto Turístico
+          Pontos Turísticos
         </a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-          Hotel
+          Hotéis
         </a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-          Comodidade
+          Comodidades
         </a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-          Quarto
+          Quartos
         </a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-          Equipagem
+          Equipagens
         </a>
       </li>
     </ul>
