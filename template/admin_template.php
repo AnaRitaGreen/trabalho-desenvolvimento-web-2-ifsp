@@ -34,24 +34,24 @@
           Hotéis
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a href="<?php echo BASE_URL; ?>admin/comodidades" class="nav-link">
           <i class="bi bi-star me-2"></i>
           Comodidades
         </a>
-      </li>
+      </li> -->
       <li>
         <a href="<?php echo BASE_URL; ?>admin/quartos" class="nav-link">
           <i class="bi bi-tv me-2"></i>
           Quartos
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a href="<?php echo BASE_URL; ?>admin/equipagens" class="nav-link">
           <i class="bi bi-gear me-2"></i>
           Equipagens
         </a>
-      </li>
+      </li> -->
     </ul>
     <hr>
     <a class="text-danger text-decoration-none text-center" href="<?php echo BASE_URL; ?>">
