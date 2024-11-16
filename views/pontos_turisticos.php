@@ -37,7 +37,7 @@
             <td><?php echo $item['id']; ?></td>
             <td><?php echo $item['nome']; ?></td>
             <td><?php echo $item['descricao']; ?></td>
-            <td><?php echo $item['image_url']; ?></td>
+            <td class="text-break"><?php echo $item['image_url']; ?></td>
             <td><?php echo $item['nome_cidade']; ?></td>
             <td>
               <button 
