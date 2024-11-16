@@ -1,5 +1,12 @@
 <?php
   class CidadesController extends Controller {
+    private $dados;
+    
+    public function __construct(){
+      parent::__construct();
+      $this->dados = array();
+    }
+    
     public function index() {
       $cidade_class = new Cidade();
       $this->dados['cidades'] = $cidade_class->getAll();
@@ -86,13 +93,13 @@
       $cidade_class = new Cidade();
   
       if(isset($_POST['id']) && !empty($_POST['id'])) {
-        $dados['id'] = $_POST['id'];
+        $data['id'] = $_POST['id'];
       } else {
         header("Location: ".BASE_URL.'admin/cidades?error=1');
         exit;
       }
   
-      $cidade_class->excluir($dados['id']);
+      $cidade_class->excluir($data['id']);
   
       header("Location: ".BASE_URL.'admin/cidades');
       exit;

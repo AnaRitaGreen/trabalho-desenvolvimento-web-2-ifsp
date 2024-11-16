@@ -30,27 +30,27 @@ class Cidade extends Model {
 		return $retorno;
 	}
 
-  public function adicionar($dados){
+  public function adicionar($data){
 		$sql = "INSERT INTO cidade(id, nome, estado, image_url, maps_url) VALUES (:id, :nome, :estado, :image_url, :maps_url)";
 
 		$sql = $this->db->prepare($sql);
 		$sql->bindValue('id', null);
-		$sql->bindValue('nome', $dados['nome']);
-		$sql->bindValue('estado', $dados['estado']);
-		$sql->bindValue('image_url', $dados['image_url']);
-		$sql->bindValue('maps_url', $dados['maps_url']);
+		$sql->bindValue('nome', $data['nome']);
+		$sql->bindValue('estado', $data['estado']);
+		$sql->bindValue('image_url', $data['image_url']);
+		$sql->bindValue('maps_url', $data['maps_url']);
 		$sql->execute();
 	}
 
-	public function editar($dados){
+	public function editar($data){
 		$sql = "UPDATE cidade SET nome = :nome, estado = :estado, image_url = :image_url, maps_url = :maps_url WHERE id = :id";
 
 		$sql = $this->db->prepare($sql);
-		$sql->bindValue('id', $dados['id']);
-		$sql->bindValue('nome', $dados['nome']);
-		$sql->bindValue('estado', $dados['estado']);
-		$sql->bindValue('image_url', $dados['image_url']);
-		$sql->bindValue('maps_url', $dados['maps_url']);
+		$sql->bindValue('id', $data['id']);
+		$sql->bindValue('nome', $data['nome']);
+		$sql->bindValue('estado', $data['estado']);
+		$sql->bindValue('image_url', $data['image_url']);
+		$sql->bindValue('maps_url', $data['maps_url']);
 		$sql->execute();
 	}
 
