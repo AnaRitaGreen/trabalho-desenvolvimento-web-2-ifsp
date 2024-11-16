@@ -24,18 +24,32 @@
       <thead>
         <tr class="text-center">
           <th>Id</th>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Imagem URL</th>
+          <th>Cidade</th>
           <th colspan="2">Ações</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="text-center">
         <?php foreach($pontos_turisticos as $item): ?>
           <tr>
             <td><?php echo $item['id']; ?></td>
+            <td><?php echo $item['nome']; ?></td>
+            <td><?php echo $item['descricao']; ?></td>
+            <td><?php echo $item['image_url']; ?></td>
+            <td><?php echo $item['nome_cidade']; ?></td>
             <td>
               <button 
                 class="btn btn-primary" 
                 data-bs-toggle="modal" 
                 data-bs-target="#modal-editar"
+                data-id="<?php echo $item['id']; ?>"
+                data-nome="<?php echo $item['nome']; ?>"
+                data-descricao="<?php echo $item['descricao']; ?>"
+                data-image_url="<?php echo $item['image_url']; ?>"
+                data-id_cidade="<?php echo $item['id_cidade']; ?>"
+                data-nome_cidade="<?php echo $item['nome_cidade']; ?>"
               >
                 Editar
               </button>
@@ -46,6 +60,7 @@
                 data-bs-toggle="modal" 
                 data-bs-target="#modal-excluir"
                 data-id="<?php echo $item['id']; ?>"
+                data-nome="<?php echo $item['nome']; ?>"
               >
                 Excluir
               </button>
@@ -66,7 +81,27 @@
       </div>
       <div class="modal-body">
         <form id="form-adicionar" method="POST" action="<?php echo BASE_URL; ?>admin/pontos-turisticos/adicionar">
-          
+          <div class="mb-3">
+            <label for="nome-adicionar" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome-adicionar" name="nome">
+          </div>
+          <div class="mb-3">
+            <label for="descricao-adicionar" class="form-label">Descrição</label>
+            <textarea class="form-control" id="descricao-adicionar" name="descricao"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="image_url-adicionar" class="form-label">Imagem URL</label>
+            <input type="text" class="form-control" id="image_url-adicionar" name="image_url">
+          </div>
+          <div class="mb-3">
+            <label for="id_cidade-adicionar" class="form-label">Cidade</label>
+            <select class="form-select" id="id_cidade-adicionar" name="id_cidade">
+              <option value="">Selecione uma cidade</option>
+              <?php foreach($cidades as $cidade): ?>
+                <option value="<?php echo $cidade['id']; ?>"><?php echo $cidade['nome']; ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
         </form>
       </div>
       <div class="modal-footer">
@@ -87,7 +122,27 @@
       <div class="modal-body">
         <form id="form-editar" method="POST" action="<?php echo BASE_URL; ?>admin/pontos-turisticos/editar">
           <input type="hidden" id="id-editar" name="id" />
-          
+          <div class="mb-3">
+            <label for="nome-editar" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome-editar" name="nome">
+          </div>
+          <div class="mb-3">
+            <label for="descricao-editar" class="form-label">Descrição</label>
+            <textarea class="form-control" id="descricao-editar" name="descricao"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="image_url-editar" class="form-label">Imagem URL</label>
+            <input type="text" class="form-control" id="image_url-editar" name="image_url">
+          </div>
+          <div class="mb-3">
+            <label for="id_cidade-editar" class="form-label">Cidade</label>
+            <select class="form-select" id="id_cidade-editar" name="id_cidade">
+              <option value="">Selecione uma cidade</option>
+              <?php foreach($cidades as $cidade): ?>
+                <option value="<?php echo $cidade['id']; ?>"><?php echo $cidade['nome']; ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
         </form>
       </div>
       <div class="modal-footer">
@@ -108,6 +163,7 @@
       <div class="modal-body">
         <form id="form-excluir" method="POST" action="<?php echo BASE_URL; ?>admin/pontos-turisticos/excluir">
           <input type="hidden" id="id-excluir" name="id" />
+          <p>Você tem certeza que deseja excluir o ponto turístico <strong id="nome-excluir"></strong>?</p>
         </form>
       </div>
       <div class="modal-footer">
@@ -123,9 +179,17 @@
   document.querySelectorAll('button[data-bs-target="#modal-editar"]').forEach(button => {
     button.addEventListener('click', function () {
       const id = this.getAttribute('data-id');
+      const nome = this.getAttribute('data-nome');
+      const descricao = this.getAttribute('data-descricao');
+      const image_url = this.getAttribute('data-image_url');
+      const id_cidade = this.getAttribute('data-id_cidade');
 
       // Preenche os campos do modal de editar
       document.getElementById('id-editar').value = id;
+      document.getElementById('nome-editar').value = nome;
+      document.getElementById('descricao-editar').value = descricao;
+      document.getElementById('image_url-editar').value = image_url;
+      document.getElementById('id_cidade-editar').value = id_cidade;
     });
   });
 
@@ -133,9 +197,11 @@
   document.querySelectorAll('button[data-bs-target="#modal-excluir"]').forEach(button => {
     button.addEventListener('click', function () {
       const id = this.getAttribute('data-id');
+      const nome = this.getAttribute('data-nome');
 
       // Preenche os campos do modal de excluir
       document.getElementById('id-excluir').value = id;
+      document.getElementById('nome-excluir').textContent = nome;
     });
   });
 </script>

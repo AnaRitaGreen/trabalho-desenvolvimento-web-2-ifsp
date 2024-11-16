@@ -27,7 +27,7 @@
           <th colspan="2">Ações</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="text-center">
         <?php foreach($cidades as $item): ?>
           <tr>
             <td><?php echo $item['id']; ?></td>

@@ -58,7 +58,7 @@
       Sair
     </a>
   </aside>
-  <main>
+  <main class="w-100">
     <?php $this->loadView($viewName, $viewData); ?>
   </main>
   
