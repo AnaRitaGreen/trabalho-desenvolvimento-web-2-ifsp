@@ -1,0 +1,36 @@
+.inicial {
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .inicial {
+      margin-top: 0px;
+  }
+}
+
+.inicial .img-top{
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 100%;
+  height: 248px;
+  object-fit: cover;
+}
+
+@media (min-width: 992px) {
+  .inicial .img-top{
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+  }
+
+  .inicial div:nth-child(2) img, .inicial div:nth-child(4) img {
+      transform: translateY(15%);
+  }
+} 
+

@@ -3,6 +3,8 @@
     public function exec(){
       $router = new Router();
 
+      $router->addRoute('/', array(new HomeController(), 'index'));
+
       $router->addRoute('/admin', array(new AdminController(), 'index'));
 
       $router->addRoute('/admin/cidades', array(new CidadesController(), 'index'));
