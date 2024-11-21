@@ -1,27 +1,4 @@
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid px-5">
-            <a class="navbar-brand" href="/pagInicial.html">
-            <img src="<?php echo BASE_URL; ?>assets/img/logo.png" class="w-25">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Qual cidade você procura?"
-                            aria-label="Search">
-                    </form>
-                    <a href="/cadastro.html">
-                        <button class="card-button btn btn-outline-danger" type="submit">Login / Cadastrar-se</button>
-                    </a>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+    
     <div class="container-fluid">
         <div class="row mx-auto px-5 mt-3">
             <div class="col-md-4">
@@ -54,37 +31,4 @@
             </div>
         </div>
     </div>
-    <footer class="footer text-white mt-5 p-4 text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>Costa Reserva</h5>
-                    <p>Desenvolvido no curso de Análise e Desenvolvimento de Sistema - Instituto Federal de São
-                        Paulo.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Contato</h5>
-                    <span>Email: contato@exemplo.com</span>
-                    <br>
-                    <span>Telefone: (11) 1234-5678</span>
-                </div>
-                <div class="col-md-4">
-                    <h5>Siga-nos</h5>
-                    <a href="https://www.facebook.com/" class="text-white text-decoration-none">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                    <a href="https://x.com/" class="text-white text-decoration-none">
-                        <i class="bi bi-twitter"></i>
-                    </a>
-                    <a href="https://www.instagram.com/" class="text-white text-decoration-none">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="row mt-2">
-                <div class="col-12">
-                    <p> 2024 Costa Reserva. Todos os direitos reservados.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    
