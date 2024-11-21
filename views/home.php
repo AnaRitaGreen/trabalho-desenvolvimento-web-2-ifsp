@@ -4,7 +4,7 @@
             <div class="col-md-4">
                 <h1 class="title">Viva uma grande aventura</h1>
                 <p class="text">Descubra locais incríveis para se visitar em cidades maravilhosas do Brasil.</p>
-                <a href="listaCidades.html">
+                <a href="<?php echo BASE_URL; ?>cidades">
                     <button class="button btn w-100 btn-lg card-button btn-danger" type="submit">Descubra novos
                         lugares</button>
                 </a>

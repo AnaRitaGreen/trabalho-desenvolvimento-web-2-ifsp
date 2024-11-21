@@ -4,6 +4,7 @@
       $router = new Router();
 
       $router->addRoute('/', array(new HomeController(), 'index'));
+      $router->addRoute('/cidades', array(new HomeController(), 'lista_cidades'));
 
       $router->addRoute('/admin', array(new AdminController(), 'index'));
 
