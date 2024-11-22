@@ -10,10 +10,10 @@
   <title>Costa Reserva</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-md bg-body-tertiary">
     <div class="container-fluid px-5">
-        <a class="navbar-brand" href="/pagInicial.html">
-          <img src="<?php echo BASE_URL; ?>assets/img/logo.png" class="w-25">
+        <a class="navbar-brand mw-100" style="width: 150px;" href="<?php echo BASE_URL; ?>">
+          <img src="<?php echo BASE_URL; ?>assets/img/logo.png" class="w-100">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -21,10 +21,12 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                
-                <a href="/cadastro.html">
-                    <button class="card-button btn btn-outline-danger" type="submit">Login / Cadastrar-se</button>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+                <a href="">
+                    <button class="card-button btn btn-outline-danger" type="submit">Cadastrar-se</button>
+                </a>
+                <a href="">
+                    <button class="card-button btn btn-danger" type="submit">Entrar</button>
                 </a>
             </ul>
         </div>
