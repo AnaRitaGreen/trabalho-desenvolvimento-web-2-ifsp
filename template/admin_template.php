@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>assets/css/admin_template.css">
 
+  <link rel="shortcut icon" href="<?php echo BASE_URL; ?>assets/img/favicon.png" type="image/x-icon">
+
   <title>Admin - Costa Reserva</title>
 </head>
 <body>
