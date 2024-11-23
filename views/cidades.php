@@ -12,7 +12,7 @@
   </div>
 <?php endif; ?>
 
-<div class="card mx-4 mt-4">
+<div class="card m-4">
   <div class="card-header d-flex justify-content-between align-items-center">
     <strong class="fs-4">Cidades</strong>
     <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-adicionar">

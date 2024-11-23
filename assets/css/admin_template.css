@@ -10,3 +10,7 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
 }
+
+body main {
+  overflow-y: auto;
+}
