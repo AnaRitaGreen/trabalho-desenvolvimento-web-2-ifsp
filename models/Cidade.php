@@ -4,7 +4,7 @@ class Cidade extends Model {
   public function getAll(){
 		$retorno = array();
 
-		$sql = 'SELECT * FROM cidade';
+		$sql = 'SELECT * FROM cidade ORDER BY id';
 		$sql = $this->db->query($sql);
 
 		if($sql->rowCount() > 0){
