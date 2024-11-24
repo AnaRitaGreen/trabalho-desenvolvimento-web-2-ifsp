@@ -25,10 +25,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
                 <a href="">
-                    <button class="card-button btn btn-outline-danger" type="submit">Cadastrar-se</button>
+                    <button class="card-button btn btn-site-outline" type="submit">Cadastrar-se</button>
                 </a>
                 <a href="">
-                    <button class="card-button btn btn-danger" type="submit">Entrar</button>
+                    <button class="card-button btn btn-site" type="submit">Entrar</button>
                 </a>
             </ul>
         </div>

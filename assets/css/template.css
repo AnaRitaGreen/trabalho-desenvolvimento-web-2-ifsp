@@ -1,14 +1,53 @@
-.inicial {
+.btn-site {
+  color: #fff; /* Cor do texto */
+  background-color: #a05630; /* Cor de fundo */
+  border-color: #a05630; /* Cor da borda */
+}
+
+.btn-site:hover,
+.btn-site:focus {
+  background-color: #8c4b29; /* Cor mais escura no hover */
+  border-color: #8c4b29; /* Borda no hover */
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Botão com contorno */
+.btn-site-outline {
+  color: #a05630; /* Cor do texto */
+  background-color: transparent; /* Fundo transparente */
+  border: 2px solid #a05630; /* Borda */
+}
+
+.btn-site-outline:hover,
+.btn-site-outline:focus {
+  background-color: #a05630; /* Fundo no hover */
+  color: #fff; /* Texto no hover */
+  border-color: #a05630; /* Borda no hover */
+  transition: all 0.3s ease;
+}
+
+.text-site {
+  color: #a05630 !important; /* Cor do texto */
+}
+
+/* Fundo com a cor do site */
+.bg-site {
+  background-color: #a05630 !important; /* Cor de fundo */
+  color: #fff !important; /* Texto claro para contraste */
+}
+
+.imagens-pagina-inicial {
   margin-top: 1rem;
 }
 
 @media (min-width: 768px) {
-  .inicial {
+  .imagens-pagina-inicial {
       margin-top: 0px;
   }
 }
 
-.inicial .img-top{
+.imagens-pagina-inicial img {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -19,7 +58,7 @@
 }
 
 @media (min-width: 992px) {
-  .inicial .img-top{
+  .imagens-pagina-inicial img {
       border-top-right-radius: 10px;
       border-top-left-radius: 10px;
       border-bottom-right-radius: 10px;
@@ -29,16 +68,79 @@
       object-fit: cover;
   }
 
-  .inicial div:nth-child(2) img, .inicial div:nth-child(4) img {
+  .imagens-pagina-inicial div:nth-child(2) img, .imagens-pagina-inicial div:nth-child(4) img {
       transform: translateY(15%);
   }
 }
 
 .footer{
-  background-color: #F25D27;
-
+  background-color: #a05630;
 }
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.card-cidade {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.card-cidade img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-cidade:hover {
+  filter: brightness(0.95);
+  transition: all 0.3s;
+}
+
+.ponto-turistico-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.container-cidade-imagem-mapa img {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.hotel-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.banner-hotel{
+  position: relative;
+}
+
+.banner-hotel img{
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.banner-hotel span{
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.banner-hotel span:hover{
+  background-color: #eaeaea;
+}
+
+.card-quarto img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
 }

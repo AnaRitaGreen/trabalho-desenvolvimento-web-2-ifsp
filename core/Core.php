@@ -5,8 +5,9 @@
 
       $router->addRoute('/', array(new HomeController(), 'index'));
       $router->addRoute('/cidades', array(new HomeController(), 'lista_cidades'));
-      $router->addRoute('/cidades/1', array(new HomeController(), 'cidade'));
-      $router->addRoute('/cidades/1/3', array(new HomeController(), 'hotel'));
+      $router->addRoute('/cidades/{id_cidade}', array(new HomeController(), 'cidade'));
+      $router->addRoute('/cidades/{id_cidade}/{id_hotel}', array(new HomeController(), 'hotel'));
+      $router->addRoute('/cidades/{id_cidade}/{id_hotel}/{id_quarto}', array(new HomeController(), 'quarto'));
 
       $router->addRoute('/admin', array(new AdminController(), 'index'));
 

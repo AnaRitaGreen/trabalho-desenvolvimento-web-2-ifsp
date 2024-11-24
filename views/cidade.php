@@ -1,98 +1,90 @@
-<div class="">
-  <img class="img-cidade"
-    src="<?php echo $cidade['image_url'] ?>"
-    alt="imgCidade">
-</div>
-<div class="row mt-2 mx-auto text px-5">
-  <div class="col-12 col-sm-6 pe-5 info-praia">
-    <br>
-    <h2><?php echo $cidade['nome'] ?></h2>
-    <!-- <p><?php echo $cidade['descricao'] ?></p> -->
-  </div>
-  <div class="col-12 col-sm-6 ps-5">
-    <br>
-    <div class="row row-cols-1 row-cols-md-3 gy-2 ">
-      <div class="col">
-        <div class="card h-100">
-          <i class="bi bi-camera text-warning ms-2" style="font-size: 2rem;"></i>
-          <div class="card-body">
-            <h2 class="card-title">55</h2>
-            <p class="card-text">Pontos turísticos</p>
-          </div>
-        </div>
+<div class="row mt-3 mx-auto px-5">
+  <div class="col-12 col-sm-6">
+    <div class="d-flex justify-content-between align-items-center">
+      <h1 class="fs-2"><?php echo $cidade['nome'] ?></h1>
+      <div class="fs-5">
+        <strong class="text-site"><?php echo count($pontos_turisticos); ?></strong>
+        <span>Pontos Turísticos</span>
+        <i class="bi bi-camera text-site ms-2"></i>
       </div>
-      <!-- <div class="col">
-        <div class="card h-100">
-          <i class="bi bi-cup-hot text-warning ms-2" style="font-size: 2rem;"></i>
-          <div class="card-body">
-            <h2 class="card-title">20</h2>
-            <p class="card-text">Comida e Bebida</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <i class="bi bi-calendar text-warning ms-2" style="font-size: 2rem;"></i>
-          <div class="card-body">
-            <h2 class="card-title">12</h2>
-            <p class="card-text">Eventos Organizados</p>
-          </div>
-        </div>
-      </div> -->
     </div>
+
+    <?php foreach($pontos_turisticos as $item): ?>
+      <div class="card ponto-turistico-card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="<?php echo $item['image_url'] ?>" alt="<?php echo $item['nome'] ?>" class="img-fluid">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><?php echo $item['nome'] ?></h5>
+              <p class="card-text"><?php echo $item['descricao'] ?></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <?php endforeach;?>
+  </div>
+  <div class="col-12 col-sm-6 container-cidade-imagem-mapa">
+    <img 
+      src="<?php echo $cidade['image_url'] ?>" 
+      alt="Imagem representando a cidade de <?php echo $cidade['nome'] ?>"
+      class="img-fluid mb-3"
+    >
+    <iframe
+      src="<?php echo $cidade['maps_url'] ?>"
+      height="300" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade"
+      class="w-100"
+      ></iframe>
   </div>
 </div>
 
-<div class="px-5 mt-5">
-  <iframe
-    src="<?php echo $cidade['maps_url'] ?>"
-    height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-    class="container-fluid"></iframe>
-</div>
-
-<div class="px-5 mt-5">
+<div class="row mt-5 mx-auto px-5">
+  <h4 class="mb-3">Hoteis:</h4>
   <?php foreach($hoteis as $item): ?>
-    <div class="d-flex justify-content-center">
-      <div class="card mb-3" style="max-width: 740px;">
-        <div class="row no-gutters d-flex align-items-center">
-          <div class="col-md-4">
-            <div id="carousel01" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner carousel-image">
+    <div class="col-12 col-sm-6 col-xl-4">
+      <div class="card mb-3 hotel-card">
+        <div class="row no-gutters">
+          <div class="col-lg-4">
+            <div id="carousel-hoteis-<?php echo $item['id']; ?>" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img
-                    src="<?php echo $item['image_url'] ?>"
-                    alt="">
+                  <img class="d-block w-100" src="<?php echo $item['image_url'] ?>" alt="">
                 </div>
                 <?php if(isset($item['image2_url'])): ?>
                   <div class="carousel-item">
-                    <img
-                      src="<?php echo $item['image2_url'] ?>"
-                      alt="">
+                    <img class="d-block w-100" src="<?php echo $item['image2_url'] ?>" alt="">
                   </div>
                 <?php endif;?>
                 <?php if(isset($item['image3_url'])):?>
                   <div class="carousel-item">
-                    <img
-                      src="<?php echo $item['image3_url'] ?>"
-                      alt="">
+                    <img class="d-block w-100" src="<?php echo $item['image3_url'] ?>" alt="">
                   </div>
                 <?php endif;?>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel01" data-bs-slide="prev">
+              <button class="carousel-control-prev" type="button" data-bs-target="#carousel-hoteis-<?php echo $item['id']; ?>" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel01" data-bs-slide="next">
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel-hoteis-<?php echo $item['id']; ?>" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title"><?php echo $item['nome'] ?></h5>
-              <!-- <p><i class="bi bi-cup-straw"></i></p> -->
-              <a href="<?php echo BASE_URL;?>/cidades/1/3" class="card-button btn btn-danger">Faça já sua reserva!</a>
+          <div class="col-lg-8">
+            <div class="card-body d-flex flex-column justify-content-between h-100">
+              <div>
+                <h5 class="card-title"><?php echo $item['nome'] ?></h5>
+                <!-- Aqui entrarão as características do quarto -->
+              </div>
+              <a href="<?php echo BASE_URL;?>cidades/<?php echo $cidade['id'] ?>/<?php echo $item['id'] ?>" class="card-button btn btn-site">
+                Escolher quarto
+              </a>
             </div>
           </div>
         </div>

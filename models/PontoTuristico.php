@@ -30,6 +30,22 @@ class PontoTuristico extends Model {
 		return $retorno;
 	}
 
+	public function getByCidade($id_cidade){
+		$retorno = array();
+
+		$sql = 'SELECT p.*, c.nome AS nome_cidade FROM ponto_turistico p INNER JOIN cidade c ON p.id_cidade = c.id WHERE p.id_cidade = :id_cidade';
+
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":id_cidade", $id_cidade);
+		$sql->execute();
+
+		if($sql->rowCount() > 0){
+			$retorno = $sql->fetchAll(\PDO::FETCH_ASSOC);
+		}
+
+		return $retorno;
+	}
+
 	public function adicionar($data){
 		$sql = "INSERT INTO ponto_turistico(id, nome, descricao, image_url, id_cidade) VALUES (:id, :nome, :descricao, :image_url, :id_cidade)";
 

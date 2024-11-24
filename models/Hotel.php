@@ -30,6 +30,22 @@ class Hotel extends Model {
 		return $retorno;
 	}
 
+	public function getByCidade($id_cidade){
+		$retorno = array();
+
+		$sql = 'SELECT h.*, c.nome AS nome_cidade FROM hotel h INNER JOIN cidade c ON h.id_cidade = c.id WHERE h.id_cidade = :cidade';
+
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":cidade", $id_cidade);
+		$sql->execute();
+
+		if($sql->rowCount() > 0){
+			$retorno = $sql->fetchAll(\PDO::FETCH_ASSOC);
+		}
+
+		return $retorno;
+	}
+
 	public function adicionar($data){
 		$sql = "INSERT INTO hotel(id, nome, image_url, image2_url, image3_url, id_cidade) VALUES (:id, :nome, :image_url, :image2_url, :image3_url, :id_cidade)";
 
