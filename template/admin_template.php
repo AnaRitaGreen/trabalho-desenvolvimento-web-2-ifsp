@@ -1,6 +1,6 @@
 <?php 
-  if(isset(!$_SESSION['user'])){
-    header('Location: '.BASE_URL.'admin');
+  if(!isset($_SESSION['user']) || empty($_SESSION['user'])){
+    header('Location: '.BASE_URL.'entrar');
   }
 ?>
 
@@ -62,7 +62,7 @@
       </li> -->
     </ul>
     <hr>
-    <a class="text-danger text-decoration-none text-center" href="<?php echo BASE_URL; ?>">
+    <a class="text-danger text-decoration-none text-center" href="<?php echo BASE_URL; ?>sair">
       Sair
     </a>
   </aside>

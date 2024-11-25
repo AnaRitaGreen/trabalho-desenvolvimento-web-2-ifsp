@@ -15,8 +15,9 @@
       $router->addRoute('/registrar', array(new AuthController(), 'sign_up'));
       $router->addRoute('/registrar/action', array(new AuthController(), 'sign_up_action'));
 
-      $router->addRoute('/admin', array(new AdminController(), 'index'));
-      $router->addRoute('/admin/entrar', array(new AdminController(), 'login'));
+      $router->addRoute('/sair', array(new AuthController(), 'sign_out'));
+
+      $router->addRoute('/minhas-reservas', array(new HomeController(), 'minhas_reservas'));
 
       $router->addRoute('/admin/cidades', array(new CidadesController(), 'index'));
       $router->addRoute('/admin/cidades/adicionar', array(new CidadesController(),'adicionar_cidade'));

@@ -19,15 +19,15 @@
 ?>
 
 <div class="form-admin bg-body-tertiary rounded-md p-3">
-  <a class="d-flex justify-content-center" href="<?php echo BASE_URL; ?>">
+  <a class="d-flex justify-content-center mb-3" href="<?php echo BASE_URL; ?>">
     <img src="<?php echo BASE_URL; ?>assets/img/logo.png" class="w-50">
   </a>
-  <h2 class="text-center my-3">Área do Cliente</h2>
+  <hr />
   <form method="POST" action="<?php echo BASE_URL; ?>entrar/action">
     <input type="hidden" name="url" value="<?php echo $_GET['url'] ?>">
     <div class="form-group mb-3">
       <label for="email">E-mail</label>
-      <input type="email" class="form-control" id="email" name="e-mail" placeholder="Informe o e-mail" required>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Informe o e-mail" required>
     </div>
     <div class="form-group mb-3">
       <label for="senha">Senha</label>

@@ -23,13 +23,37 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
-                <a href="">
-                    <button class="card-button btn btn-site-outline" type="submit">Cadastrar-se</button>
-                </a>
-                <a href="<?php echo BASE_URL; ?>entrar?url=<?php echo $_SERVER['REQUEST_URI']; ?>">
-                    <button class="card-button btn btn-site" type="submit">Entrar</button>
-                </a>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mt-3 mt-lg-0 gap-2">
+                <?php if(isset($_SESSION['user']) && !empty($_SESSION['user'])): ?>
+                    <li class="nav-item d-flex justify-content-start align-items-center me-3">
+                        Olá, <?php echo $_SESSION['user']['nome']; ?>
+                    </li>
+                    <?php if($_SESSION['user']['admin'] == 1): ?>
+                        <a href="<?php echo BASE_URL; ?>admin/cidades">
+                            <button class="btn btn-site-outline" type="submit">Admin</button>
+                        </a>
+                    <?php endif; ?>
+                    <a href="<?php echo BASE_URL; ?>minhas-reservas">
+                        <button class="btn btn-site" type="submit">Minhas Reservas</button>
+                    </a>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="<?php echo BASE_URL; ?>sair">Sair</a>
+                    </li>
+                <?php endif; ?>
+
+                <?php if(!isset($_SESSION['user']) || empty($_SESSION['user'])): ?>
+                    <?php 
+                        $prefixToRemove = '/CTDDWEB2/trabalho-desenvolvimento-web-2-ifsp/';
+                        $currentPath = $_SERVER['REQUEST_URI'];
+                        $path = str_replace($prefixToRemove, '', $currentPath);
+                    ?>
+                    <a href="<?php echo BASE_URL; ?>registrar?url=<?php echo $path; ?>">
+                        <button class="btn btn-site-outline" type="submit">Cadastrar-se</button>
+                    </a>
+                    <a href="<?php echo BASE_URL; ?>entrar?url=<?php echo $path; ?>">
+                        <button class="btn btn-site" type="submit">Entrar</button>
+                    </a>
+                <?php endif; ?>
             </ul>
         </div>
     </div>
