@@ -1,3 +1,9 @@
+<?php 
+  if(isset(!$_SESSION['user'])){
+    header('Location: '.BASE_URL.'admin');
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

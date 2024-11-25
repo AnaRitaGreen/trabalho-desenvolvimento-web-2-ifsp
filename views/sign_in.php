@@ -14,7 +14,7 @@
 
 <?php 
   if(isset($_SESSION['user'])){
-    header('Location: '.BASE_URL.'admin/cidades');
+    header('Location: '.BASE_URL.$_GET['url']);
   }
 ?>
 
@@ -22,8 +22,9 @@
   <a class="d-flex justify-content-center" href="<?php echo BASE_URL; ?>">
     <img src="<?php echo BASE_URL; ?>assets/img/logo.png" class="w-50">
   </a>
-  <h2 class="text-center my-3">Área administrativa</h2>
-  <form method="POST" action="<?php echo BASE_URL; ?>admin/entrar">
+  <h2 class="text-center my-3">Área do Cliente</h2>
+  <form method="POST" action="<?php echo BASE_URL; ?>entrar/action">
+    <input type="hidden" name="url" value="<?php echo $_GET['url'] ?>">
     <div class="form-group mb-3">
       <label for="email">E-mail</label>
       <input type="email" class="form-control" id="email" name="e-mail" placeholder="Informe o e-mail" required>

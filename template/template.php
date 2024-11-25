@@ -27,7 +27,7 @@
                 <a href="">
                     <button class="card-button btn btn-site-outline" type="submit">Cadastrar-se</button>
                 </a>
-                <a href="">
+                <a href="<?php echo BASE_URL; ?>entrar?url=<?php echo $_SERVER['REQUEST_URI']; ?>">
                     <button class="card-button btn btn-site" type="submit">Entrar</button>
                 </a>
             </ul>

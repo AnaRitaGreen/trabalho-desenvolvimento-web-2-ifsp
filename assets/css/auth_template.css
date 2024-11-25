@@ -1,20 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  flex-wrap: nowrap;
-  height: 100vh;
-  max-height: 100vh;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-body main {
-  overflow-y: auto;
-}
-
 .btn-site {
   color: #fff; /* Cor do texto */
   background-color: #a05630; /* Cor de fundo */
@@ -42,4 +25,10 @@ body main {
   color: #fff; /* Texto no hover */
   border-color: #a05630; /* Borda no hover */
   transition: all 0.3s ease;
+}
+
+.form-admin {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 2rem;
 }
