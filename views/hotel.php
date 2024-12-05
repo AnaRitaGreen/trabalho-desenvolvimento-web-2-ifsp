@@ -85,7 +85,7 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end">
-                                <a href="<?php echo BASE_URL;?>cidades/<?php echo $hotel['id_cidade'] ?>/<?php echo $hotel['id'] ?>/<?php echo $item['id'] ?>" class="btn btn-primary btn-site">Reservar</a>
+                                <a href="<?php echo BASE_URL;?>cidades/<?php echo $hotel['id_cidade'] ?>/<?php echo $hotel['id'] ?>/<?php echo $item['id'] ?>" class="btn btn-site">Reservar</a>
                             </div>
                         </div>
                     </div>

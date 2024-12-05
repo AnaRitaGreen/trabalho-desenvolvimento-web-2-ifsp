@@ -17,7 +17,7 @@ class Quarto extends Model {
   public function get($id){
 		$retorno = array();
 
-		$sql = 'SELECT q.*, h.nome AS nome_hotel FROM quarto q INNER JOIN hotel h ON q.id_hotel = h.id WHERE id = :id';
+		$sql = 'SELECT q.*, h.nome AS nome_hotel FROM quarto q INNER JOIN hotel h ON q.id_hotel = h.id WHERE q.id = :id';
 
 		$sql = $this->db->prepare($sql);
 		$sql->bindValue(":id", $id);

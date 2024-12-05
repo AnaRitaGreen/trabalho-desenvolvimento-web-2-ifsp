@@ -19,7 +19,7 @@
 </head>
 <body>
   <aside class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 240px;">
-    <a class="navbar-brand" href="<?php echo BASE_URL; ?>admin">
+    <a class="navbar-brand" href="<?php echo BASE_URL; ?>">
       <img src="<?php echo BASE_URL; ?>assets/img/logo.png" class="w-100">
     </a>
     <hr>

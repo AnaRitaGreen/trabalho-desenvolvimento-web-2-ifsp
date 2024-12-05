@@ -41,6 +41,19 @@ class HomeController extends Controller {
 
     $this->loadTemplate('template', 'hotel', $this->dados);
   }
+
+  public function quarto($params){
+    $quarto_id = $params['id_quarto'];
+
+    $quarto_class = new Quarto();
+    $this->dados['quarto'] = $quarto_class->get($quarto_id);
+
+    $this->loadTemplate('template', 'reservar_quarto', $this->dados);
+  }
+
+  public function minhas_reservas() {
+    $this->loadTemplate('template', 'minhas_reservas', $this->dados);
+  }
   
 }
 

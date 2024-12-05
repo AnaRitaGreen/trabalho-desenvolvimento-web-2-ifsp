@@ -20,10 +20,11 @@ class AuthController extends Controller {
       $usuario_class = new Usuario();
       if($usuario_class->login($email, $senha)) {
         header('Location: '.BASE_URL.$_POST['url']);
-        exit;
       } else {
         header('Location: '.BASE_URL.'entrar?error=E-mail e/ou senha incorretos.');
       }
+
+      exit;
     }
 
     header("Location: ".BASE_URL.'entrar?error=Preencha todos os campos.');

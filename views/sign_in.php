@@ -13,7 +13,7 @@
 <?php endif; ?>
 
 <?php 
-  if(isset($_SESSION['user'])){
+  if(isset($_SESSION['user']) && isset($_GET['url'])){
     header('Location: '.BASE_URL.$_GET['url']);
   }
 ?>
@@ -24,7 +24,7 @@
   </a>
   <hr />
   <form method="POST" action="<?php echo BASE_URL; ?>entrar/action">
-    <input type="hidden" name="url" value="<?php echo $_GET['url'] ?>">
+    <input type="hidden" name="url" value="<?php echo isset($_GET['url']) ? $_GET['url'] : '/' ?>">
     <div class="form-group mb-3">
       <label for="email">E-mail</label>
       <input type="email" class="form-control" id="email" name="email" placeholder="Informe o e-mail" required>
