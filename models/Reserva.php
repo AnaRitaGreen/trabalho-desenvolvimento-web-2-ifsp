@@ -4,7 +4,7 @@ class Reserva extends Model {
   public function getByUser($id_usuario){
 		$retorno = array();
 
-		$sql = 'SELECT * FROM reserva WHERE id_usuario = :id_usuario';
+		$sql = 'SELECT r.*,  q.nome AS nome_quarto, h.nome AS nome_hotel, c.nome As nome_cidade, DATEDIFF(r.checkout, r.checkin) * q.preco AS valor_total FROM reserva r INNER JOIN quarto q ON r.id_quarto = q.id INNER JOIN hotel h ON q.id_hotel = h.id INNER JOIN cidade c ON h.id_cidade = c.id WHERE id_usuario = :id_usuario ORDER BY id DESC';
 
 		$sql = $this->db->prepare($sql);
 		$sql->bindValue(":id_usuario", $id_usuario);

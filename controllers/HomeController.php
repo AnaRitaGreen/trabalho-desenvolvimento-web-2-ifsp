@@ -96,7 +96,11 @@ class HomeController extends Controller {
   }
 
   public function minhas_reservas() {
+    $reserva_class = new Reserva();
+    $this->dados['reservas'] = $reserva_class->getByUser($_SESSION['user']['id']);
+    
     $this->loadTemplate('template', 'minhas_reservas', $this->dados);
+
   }
   
 }
