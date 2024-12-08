@@ -51,6 +51,50 @@ class HomeController extends Controller {
     $this->loadTemplate('template', 'reservar_quarto', $this->dados);
   }
 
+  public function reservar_quarto() {
+    $reserva_class = new Reserva();
+
+    if(isset($_POST['checkin']) && !empty($_POST['checkin'])) {
+      $data['checkin'] = $_POST['checkin'];
+    } else {
+      header("Location: ".$_POST['url'].'?error=1');
+      exit;
+    }
+
+    if(isset($_POST['checkout']) && !empty($_POST['checkout'])) {
+      $data['checkout'] = $_POST['checkout'];
+    } else {
+      header("Location: ".$_POST['url'].'?error=1');
+      exit;
+    }
+
+    if(isset($_POST['forma-pagamento']) && !empty($_POST['forma-pagamento'])) {
+      $data['forma-pagamento'] = $_POST['forma-pagamento'];
+    } else {
+      header("Location: ".$_POST['url'].'?error=1');
+      exit;
+    }
+
+    if(isset($_POST['id_usuario']) && !empty($_POST['id_usuario'])) {
+      $data['id_usuario'] = $_POST['id_usuario'];
+    } else {
+      header("Location: ".$_POST['url'].'?error=4');
+      exit;
+    }
+
+    if(isset($_POST['id_quarto']) && !empty($_POST['id_quarto'])) {
+      $data['id_quarto'] = $_POST['id_quarto'];
+    } else {
+      header("Location: ".$_POST['url'].'?error=5');
+      exit;
+    }
+
+    $reserva_class->adicionar($data);
+
+    header("Location: ".BASE_URL.'minhas-reservas?message=Reserva realizada com sucesso!');
+    exit;
+  }
+
   public function minhas_reservas() {
     $this->loadTemplate('template', 'minhas_reservas', $this->dados);
   }

@@ -32,3 +32,7 @@
   max-width: 450px;
   margin: 0 2rem;
 }
+
+.text-site {
+  color: #a05630 !important; /* Cor do texto */
+}

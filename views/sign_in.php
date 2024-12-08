@@ -35,4 +35,8 @@
     </div>
     <button type="submit" class="btn btn-site w-100">Entrar</button>
   </form>
+  <div class="mt-2 text-center">
+    Não possui uma conta?
+    <a href="<?php echo BASE_URL;?>registrar" class=" text-decoration-none text-site ">Cadastrar-se</a>
+  </div>
 </div>

@@ -8,6 +8,7 @@
       $router->addRoute('/cidades/{id_cidade}', array(new HomeController(), 'cidade'));
       $router->addRoute('/cidades/{id_cidade}/{id_hotel}', array(new HomeController(), 'hotel'));
       $router->addRoute('/cidades/{id_cidade}/{id_hotel}/{id_quarto}', array(new HomeController(), 'quarto'));
+      $router->addRoute('/cidades/{id_cidade}/{id_hotel}/{id_quarto}/reservar', array(new HomeController(),'reservar_quarto'));
 
       $router->addRoute('/entrar', array(new AuthController(), 'sign_in'));
       $router->addRoute('/entrar/action', array(new AuthController(), 'sign_in_action'));

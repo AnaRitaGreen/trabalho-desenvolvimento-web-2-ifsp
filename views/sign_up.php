@@ -18,7 +18,7 @@
   </a>
   <hr />
   <form method="POST" action="<?php echo BASE_URL; ?>registrar/action">
-    <input type="hidden" name="url" value="<?php echo $_GET['url'] ?>">
+    <input type="hidden" name="url" value="<?php echo isset($_GET['url']) ? $_GET['url'] : '/'; ?>">
     <div class="form-group mb-3">
       <label for="nome">Nome</label>
       <input type="text" class="form-control" id="nome" name="nome" placeholder="Informe o nome" required>
@@ -33,4 +33,8 @@
     </div>
     <button type="submit" class="btn btn-site w-100">Registrar</button>
   </form>
+  <div class="mt-2 text-center">
+    Possui uma conta?
+    <a href="<?php echo BASE_URL;?>entrar" class=" text-decoration-none text-site ">Entrar</a>
+  </div>
 </div>
