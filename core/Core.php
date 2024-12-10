@@ -19,6 +19,7 @@
       $router->addRoute('/sair', array(new AuthController(), 'sign_out'));
 
       $router->addRoute('/minhas-reservas', array(new HomeController(), 'minhas_reservas'));
+      $router->addRoute('/minhas-reservas/excluir', array(new HomeController(), 'excluir_minhas_reserva'));
 
       $router->addRoute('/admin/cidades', array(new CidadesController(), 'index'));
       $router->addRoute('/admin/cidades/adicionar', array(new CidadesController(),'adicionar_cidade'));

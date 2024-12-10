@@ -7,7 +7,7 @@
     </div>
     <div class="col-12 col-lg-6">
         <div class="d-flex justify-content-between">
-            <h1><?php echo $hotel["nome"]; ?></h1>
+            <h1 class="fs-2"><?php echo $hotel["nome"]; ?></h1>
             <span class="text-site">
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>

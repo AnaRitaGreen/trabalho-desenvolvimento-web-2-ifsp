@@ -23,7 +23,7 @@
 
 <div class="container-fluid">
     <div class="row mt-3 px-5">
-        <h1>Reserva do <?php echo $quarto['nome']; ?></h1>
+        <h1 class="fs-2">Reserva do <?php echo $quarto['nome']; ?></h1>
     </div>
     
     <div class="row px-5 mt-1 gy-3">

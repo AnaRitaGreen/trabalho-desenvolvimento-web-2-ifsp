@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row mt-3 px-5">
-        <h1>Selecione uma cidade</h1>
+        <h1 class="fs-2">Selecione uma cidade</h1>
     </div>
 
     <div class="row gy-3 px-5 mt-3">

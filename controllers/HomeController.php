@@ -98,9 +98,14 @@ class HomeController extends Controller {
   public function minhas_reservas() {
     $reserva_class = new Reserva();
     $this->dados['reservas'] = $reserva_class->getByUser($_SESSION['user']['id']);
-    
     $this->loadTemplate('template', 'minhas_reservas', $this->dados);
+  }
 
+  public function excluir_minhas_reserva() {
+    $reserva_class = new Reserva();
+    $reserva_class->excluir($_POST['id']);
+    header("Location: ".BASE_URL.'minhas-reservas');
+    exit;
   }
   
 }
